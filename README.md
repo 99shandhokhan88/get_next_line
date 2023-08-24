@@ -1,6 +1,5 @@
 # get_next_line
 
-Certainly! Here's a comprehensive guide to the "Get Next Line" project that you can include in your GitHub repository's README file. This guide provides a clear and step-by-step explanation of the project, from its purpose to how to use it and additional considerations:
 
 # Get Next Line (GNL) Project Guide
 
