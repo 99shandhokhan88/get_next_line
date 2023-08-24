@@ -123,6 +123,6 @@ Contributions to the GNL project are welcome. Feel free to open issues, suggest 
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE] file for details.
+This project is licensed under the MIT License.
 
 This guide provides a comprehensive overview of the "Get Next Line" project, from installation to customization and advanced topics. Adapt it for your repository's README file and keep it updated with any project changes or improvements.
