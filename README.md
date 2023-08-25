@@ -97,6 +97,52 @@ int main(void)
 }
 ```
 
+## Here's how the project typically works:
+
+1. **Initialization:** At the beginning of the function or loop that reads lines, you initialize a static buffer and other necessary variables to keep track of the read data and the current state.
+
+2. **Reading from File/Stream:** You use a function like `read()` or `fgets()` to read a chunk of data from the file or input stream into the buffer. This chunk may contain one or more lines, or it may contain a partial line that extends beyond the buffer.
+
+3. **Buffer Parsing:** After reading a chunk into the buffer, you parse the contents of the buffer to find complete lines. This involves searching for line terminators, such as newline characters (`'\n'`) or carriage return characters (`'\r'`). The goal is to identify where one line ends and the next begins.
+
+4. **Handling Partial Lines:** If a line is split across buffer reads, you need to handle it. You may need to concatenate the partial line from the previous buffer with the new chunk and continue searching for line terminators.
+
+5. **Line Extraction:** When you find a complete line, you extract it from the buffer and return it. The line is usually returned as a string or a line of text.
+
+6. **Buffer Management:** After extracting a line, you need to manage the buffer. This includes shifting any remaining data in the buffer to the beginning and updating variables to reflect the new buffer state.
+
+7. **Repeat:** You repeat the process of reading, parsing, and extracting lines until you reach the end of the file or stream.
+
+Here's some simplified pseudo-code to illustrate the concept:
+
+```python
+# Initialize buffer and other variables
+buffer = ""
+while True:
+    # Read a chunk of data into the buffer
+    chunk = read_data_from_file()
+
+    # Add the chunk to the buffer
+    buffer += chunk
+
+    # Parse the buffer for complete lines
+    while '\n' in buffer:
+        line, buffer = extract_line(buffer)
+        yield line  # Return the extracted line
+
+    # Check if we've reached the end of the file
+    if end_of_file:
+        break
+
+# Return any remaining data in the buffer as the last line
+if buffer:
+    yield buffer
+```
+
+In practice, the `get_next_line` function is implemented in C, and it often uses a static buffer that retains its state between calls. The function reads data from a file descriptor using the `read()` function, searches for newline characters, and handles partial lines as described above. The extracted lines are typically returned as pointers to dynamically allocated memory.
+
+The key challenge in the `get_next_line` project is managing the buffer efficiently and correctly, especially when dealing with edge cases like very long lines or files without a final newline character.
+
 ## Customization
 
 You can customize the GNL project to fit your requirements. You may want to modify the buffer size, error handling, or memory management to optimize the function for your specific use case.
