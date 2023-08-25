@@ -17,7 +17,6 @@
   - [Memory Management](#memory-management)
   - [File Descriptors](#file-descriptors)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
