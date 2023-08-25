@@ -41,7 +41,7 @@ To work with the GNL project, you need the following prerequisites:
 1. Clone the GitHub repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/get_next_line.git
+   git@github.com:99shandhokhan88/get_next_line.git
    ```
 
 2. Navigate to the project directory:
@@ -50,11 +50,7 @@ To work with the GNL project, you need the following prerequisites:
    cd get_next_line
    ```
 
-3. Compile the project and create a library:
-
-   ```bash
-   make
-   ```
+3. There isn't a Makefile because of the subject.
 
 ## Usage
 
@@ -119,9 +115,5 @@ Understand the use of file descriptors in the context of GNL. Consider handling 
 ## Contributing
 
 Contributions to the GNL project are welcome. Feel free to open issues, suggest improvements, or submit pull requests.
-
-## License
-
-This project is licensed under the MIT License.
 
 This guide provides a comprehensive overview of the "Get Next Line" project, from installation to customization and advanced topics. Adapt it for your repository's README file and keep it updated with any project changes or improvements.
